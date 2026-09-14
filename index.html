@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Remover Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Space Remover Tool</h2>
+  
+  <label for="inputText">Original Text:</label>
+  <textarea id="inputText" placeholder="Paste or type your text here..."></textarea>
+  
+  <button onclick="removeSpaces()">Remove Spaces</button>
+  
+  <h3>Result:</h3>
+  <textarea id="outputText" readonly placeholder="Output will appear here..."></textarea>
+
+  <script>
+    function removeSpaces() {
+      // Get the input text
+      const input = document.getElementById('inputText').value;
+      
+      // Use regex /\s+/g to remove spaces, tabs, and newlines
+      // Or use replace(/ /g, '') if you only want to remove normal spaces
+      const output = input.replace(/\s+/g, '');
+      
+      // Set the output text
+      document.getElementById('outputText').value = output;
+    }
+  </script>
+
+</body>
+</html>
